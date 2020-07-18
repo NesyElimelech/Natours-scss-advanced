@@ -31,8 +31,6 @@
 
     @include respond(phone) {
       width: 75%;
-      top: 50%;
-      left: 50%;
     }
   }
   &__left {
@@ -52,7 +50,8 @@
     padding: 3rem 5rem;
     @include respond(tab-port) {
       width: 100%;
-      display: block;
+      height: 100%;
+      position: relative;
     }
   }
 
