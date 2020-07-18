@@ -1,0 +1,114 @@
+.footer {
+  background-color: $color-dark;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: $color-grey-light-2;
+
+  @include respond(tab-port) {
+    padding: 6rem 0;
+  }
+  @include respond(phone) {
+    padding: 4rem;
+  }
+
+  &__logo-box {
+    position: relative;
+    text-align: center;
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 15rem;
+    height: auto;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      width: 10rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      margin-top: 10rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__navigation {
+    display: inline-block;
+    padding-top: 2rem;
+    border-top: 1px solid $color-dark-grey-2;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__items {
+    display: inline-block;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-grey-light-2;
+      background-color: $color-dark;
+      text-decoration: none;
+      border: none;
+      text-transform: uppercase;
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+
+        @include respond(phone) {
+          margin-bottom: 3rem;
+        }
+      }
+
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 4rem $color-shadow-dark;
+      transform: rotate(5deg) scale(1.1);
+    }
+  }
+
+  &__copyright {
+    line-height: 3.2rem;
+    border-top: 1px solid $color-dark-grey-2;
+    padding-top: 2rem;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__copyright-link {
+    &:link,
+    &:visited {
+      color: $color-grey-light-2;
+      background-color: $color-dark;
+      text-decoration: none;
+      border: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 4rem $color-shadow-dark;
+      transform: rotate(5deg) scale(1.1);
+    }
+  }
+}

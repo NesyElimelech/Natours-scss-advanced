@@ -1,0 +1,83 @@
+@mixin btn-style {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  font-size: $default-font-size;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+
+  //? Change for <button> element:
+  border: none;
+  cursor: pointer;
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// ? --------------------- media query manager -------------------------------- //
+/* 
+
+* break points:
+     0px    -  600px : phone,
+     600px  -  900px : tablet portrait,
+     900px  -  1200px: tablet landscape,
+     1200px - 1800px : desktop, <-- the site style applied at these sizes 
+     1800px - +...   : big desktop,
+ 
+* breakpoint arguments choices:
+
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop 
+
+  ? --------------------- media query order ------------------------
+    TODO (media queries): ORDER: 
+      todo - base + typography 
+      todo - layout + grid
+      todo - page layout
+      todo - components
+
+ ! 1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == phone) {
+    //! 600px
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab-port) {
+    //! 900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab-land) {
+    //! 1200px
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == big-desktop) {
+    //! 1800px
+    @media only screen and (min-width: 112em) {
+      @content;
+    }
+  }
+}
