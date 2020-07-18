@@ -30,7 +30,9 @@
     transition: all 0.4s 0.15s;
 
     @include respond(phone) {
-      width: 80%;
+      width: 75%;
+      top: 50%;
+      left: 50%;
     }
   }
   &__left {
@@ -48,6 +50,10 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    @include respond(tab-port) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__img {

@@ -1203,7 +1203,9 @@ body {
     transition: all 0.4s 0.15s; }
     @media only screen and (max-width: 37.5em) {
       .popup__content {
-        width: 80%; } }
+        width: 75%;
+        top: 50%;
+        left: 50%; } }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
@@ -1217,6 +1219,10 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__right {
+        width: 100%;
+        display: block; } }
   .popup__img {
     display: block;
     width: 100%; }
