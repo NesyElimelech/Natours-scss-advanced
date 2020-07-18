@@ -21,17 +21,13 @@
     width: 75%;
     background-color: $color-white;
     @include absCenter;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.85);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.45);
     border-radius: 5px;
     display: table;
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.4s 0.15s;
-
-    @include respond(phone) {
-      width: 75%;
-    }
   }
   &__left {
     width: 33.333333%;
@@ -49,9 +45,9 @@
     vertical-align: middle;
     padding: 3rem 5rem;
     @include respond(tab-port) {
-      width: 100%;
-      height: 100%;
-      position: relative;
+      cell-width: 85%;
+      /* width: 85%; */
+      text-align: center;
     }
   }
 
@@ -69,6 +65,7 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
     @include respond(tab-land) {
       column-count: 3;
       column-gap: 3rem;
@@ -80,10 +77,6 @@
     }
 
     @include respond(phone) {
-      column-count: 4;
-      width: 100%;
-      display: inline-block;
-      height: 70%;
       font-size: 1rem;
     }
   }
@@ -95,6 +88,11 @@
   &:target &__content {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+
+    @include respond(phone) {
+      transform: translate(-50%, -50%) scale(0.8);
+      text-align: center;
+    }
   }
 
   &__close {
